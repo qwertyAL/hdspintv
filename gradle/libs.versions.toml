@@ -1,0 +1,89 @@
+[versions]
+agp = "8.3.2"
+hiltCompiler = "2.51.1"
+hiltAndroid = "2.51.1"
+koinAndroidxCompose = "3.5.6"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+composeBom = "2023.08.00"
+tvFoundation = "1.0.0-alpha10"
+tvMaterial = "1.0.0-beta01"
+lifecycleRuntimeKtx = "2.8.3"
+activityCompose = "1.9.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+material = "1.12.0"
+hilt = "2.51"
+ksp = "2.0.0-1.0.21"
+jetbrainsKotlinJvm = "1.9.0"
+koinAndroid = "3.5.6"
+runtimeAndroid = "1.6.8"
+navigationCompose = "2.7.7"
+material3Android = "1.2.1"
+uiToolingPreviewAndroid = "1.6.8"
+runtimeLivedata = "1.6.8"
+retrofit = "2.9.0"
+kotlinxSerializationJson = "1.5.1"
+kotlinxSerializationJsonVersion = "1.5.1"
+ktorClientAndroid = "2.3.11"
+ktorClientAndroidVersion = "2.3.11"
+ktorClientCio = "2.3.2"
+ktorClientContentNegotiation = "2.3.11"
+ktorClientContentNegotiationVersion = "2.3.11"
+ktorClientCore = "2.3.2"
+ktorClientCoreVersion = "2.3.11"
+ktorClientLoggingVersion = "2.3.11"
+ktorClientPluginsContentnegotination = "1.1.1"
+ktorClientSerializationVersion = "2.3.11"
+ktorKtorClientCore = "2.3.11"
+ktorSerializationKotlinxJson = "2.3.11"
+ktorClientLogging = "2.3.11"
+ktorClientSerialization = "2.3.11"
+ktorSerializationKotlinxJsonVersion = "2.3.11"
+converterGson = "2.5.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-tv-foundation = { group = "androidx.tv", name = "tv-foundation", version.ref = "tvFoundation" }
+androidx-tv-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvMaterial" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinAndroidxCompose" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+androidx-ui-tooling-preview-android = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroidVersion" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiationVersion" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorKtorClientCore" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorClientLoggingVersion" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktorClientSerializationVersion" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorSerializationKotlinxJsonVersion" }
+
+[plugins]
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+

@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.HDSpinTV" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
