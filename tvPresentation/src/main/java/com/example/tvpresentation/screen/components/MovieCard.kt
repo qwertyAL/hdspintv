@@ -27,7 +27,7 @@ fun MovieCard(
     shortInfo: String
 ) {
     Card(
-        onClick = { /*TODO*/ },
+        onClick = {  },
         modifier = Modifier.width(120.dp),
         shape = CardDefaults.shape(
             shape = RoundedCornerShape(10.dp)
