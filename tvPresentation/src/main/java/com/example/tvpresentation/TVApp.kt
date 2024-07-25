@@ -22,12 +22,12 @@ import org.koin.java.KoinJavaComponent.get
 
 @Composable
 @OptIn(ExperimentalTvMaterial3Api::class)
-fun TVApp(startDestination: String) {
+fun TVApp() {
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = Screens.Main(),
         builder = {
             composable(
                 route = Screens.Main()
@@ -39,7 +39,11 @@ fun TVApp(startDestination: String) {
                 route = Screens.Auth()
             ) {
                 val vm = koinViewModel<AuthScreenViewModel>()
-                AuthScreen(vm = vm)
+                AuthScreen(vm = vm, onSuccessAuth = {
+                    navController.navigate(Screens.Main()) {
+                        popUpTo(0)
+                    }
+                })
             }
         }
     )

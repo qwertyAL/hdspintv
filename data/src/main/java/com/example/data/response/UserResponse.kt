@@ -14,7 +14,7 @@ data class UserResponse(
     val info: String,
     val foto: String,
     @SerialName("youwatch") val youWatch: String,
-    @SerialName("full_name") val fullName: String,
+    @SerialName("fullname") val fullName: String,
     val favorites: String
 )
 

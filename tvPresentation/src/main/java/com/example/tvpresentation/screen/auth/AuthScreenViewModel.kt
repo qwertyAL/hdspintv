@@ -22,11 +22,11 @@ class AuthScreenViewModel(
     val password: LiveData<String> = _password
 
     fun updateName(newName: String) {
-        _name.postValue(newName)
+        _name.value = newName
     }
 
     fun updatePassword(newPassword: String) {
-        _password.postValue(newPassword)
+        _password.value = newPassword
     }
 
     fun login(onSuccess: () -> Unit) {

@@ -5,6 +5,7 @@ import android.content.Context
 import com.example.hdspintv.di.appModule
 import com.example.hdspintv.di.dataModule
 import com.example.hdspintv.di.domainModule
+import com.example.hdspintv.di.tvPresentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,7 +23,7 @@ class App: Application() {
                 single { this@App } binds arrayOf(Context::class, Application::class)
             }
             androidLogger(level = Level.DEBUG)
-            modules(listOf(appModule, domainModule, dataModule))
+            modules(listOf(appModule, domainModule, dataModule, tvPresentationModule))
             androidContext(applicationContext)
         }
 

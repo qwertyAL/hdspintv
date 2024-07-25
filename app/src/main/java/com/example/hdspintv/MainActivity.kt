@@ -21,12 +21,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.text.font.FontWeight
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import com.example.domain.model.DeviceType
 import com.example.hdspintv.ui.theme.HDSpinTVTheme
+import com.example.hdspintv.ui.theme.palette
 import com.example.tvpresentation.TVApp
 import com.example.tvpresentation.screen.Screens
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,11 +47,11 @@ class MainActivity : ComponentActivity() {
                 val deviceType = remember {
                     mutableStateOf(viewModel.getDeviceType())
                 }
-                val loginStatus by viewModel.loginStatus.observeAsState()
+//                val loginStatus by viewModel.loginStatus.observeAsState()
 
                 when(deviceType.value) {
-                    DeviceType.PHONE -> TVApp(if (loginStatus == true) { Screens.Main() } else { Screens.Auth() }) // Заглушка, потом заменить на PhoneApp()
-                    DeviceType.TV -> TVApp(if (loginStatus == true) { Screens.Main() } else { Screens.Auth() })
+                    DeviceType.PHONE -> TVApp() // Заглушка, потом заменить на PhoneApp()
+                    DeviceType.TV -> TVApp()
                     DeviceType.UNDEFINED -> ChangeDeviceTypeScreen(
                         onClick = {
                             viewModel.setDeviceType(it)
@@ -69,22 +72,36 @@ fun ChangeDeviceTypeScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.surface)
-            .padding(16.dp),
+            .padding(100.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Text(text = "Выберите тип вашего устройства", color = palette.textPrimary, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = { onClick(DeviceType.TV) },
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(10.dp),
+            colors = ButtonColors(
+                containerColor = palette.primary,
+                contentColor = palette.textPrimary,
+                disabledContainerColor = palette.primary,
+                disabledContentColor = palette.textPrimary
+            )
         ) {
             Text(text = "Смарт ТВ или приставка")
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = { onClick(DeviceType.PHONE) },
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(10.dp),
+            colors = ButtonColors(
+                containerColor = palette.primary,
+                contentColor = palette.textPrimary,
+                disabledContainerColor = palette.primary,
+                disabledContentColor = palette.textPrimary
+            )
         ) {
             Text(text = "Телефон")
         }
